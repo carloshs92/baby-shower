@@ -19,7 +19,7 @@ export function LoginForm({ onSubmit }: LoginFormProps) {
   }
 
   return (
-    <Card className="max-w-md mx-auto mb-8 bg-white/90 backdrop-blur-sm border-purple-100 shadow-lg">
+    <Card className="max-w-md mx-auto my-1 bg-white/90 backdrop-blur-sm border-purple-100 shadow-lg">
       <CardHeader className="text-center">
         <div className="bg-gradient-to-br from-yellow-200 to-pink-200 p-3 rounded-full w-fit mx-auto mb-4">
           <Mail className="h-6 w-6 text-purple-600" />
