@@ -20,22 +20,22 @@ export function ProductActions({
   onRemoveFromWishlist
 }: ProductActionsProps) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-1.5">
       {isReservedByUser ? (
         <Button
           variant="destructive"
           size="sm"
           onClick={() => onRemoveFromWishlist(productId)}
-          className="w-full"
+          className="w-full text-xs h-8"
         >
-          <UserMinus className="h-4 w-4 mr-2" />
+          <UserMinus className="h-3 w-3 mr-1" />
           Cancelar Reserva
         </Button>
       ) : !isReserved ? (
         <Button
           onClick={() => onAddToWishlist(productId)}
           size="sm"
-          className="w-full text-white font-semibold shadow-lg transition-all duration-200 hover:scale-105 active:scale-95"
+          className="w-full text-white font-semibold shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 text-xs h-8"
           style={{
             backgroundColor: "#7c3aed",
             border: "none",
@@ -43,12 +43,12 @@ export function ProductActions({
           }}
           data-product-id={productId}
         >
-          <UserPlus className="h-4 w-4 mr-2" />
+          <UserPlus className="h-3 w-3 mr-1" />
           Reservar regalo
         </Button>
       ) : (
-        <Button disabled size="sm" className="w-full bg-gray-300 text-gray-500 cursor-not-allowed">
-          <Crown className="h-4 w-4 mr-2" />
+        <Button disabled size="sm" className="w-full bg-gray-300 text-gray-500 cursor-not-allowed text-xs h-8">
+          <Crown className="h-3 w-3 mr-1" />
           Ya Reservado
         </Button>
       )}
@@ -57,10 +57,10 @@ export function ProductActions({
         variant="outline"
         size="sm"
         asChild
-        className="w-full border-blue-200 hover:bg-blue-50 bg-transparent hover:text-black"
+        className="w-full border-blue-200 hover:bg-blue-50 bg-transparent hover:text-black text-xs h-8"
       >
         <a href={productLink} target="_blank" rel="noopener noreferrer">
-          <ExternalLink className="h-4 w-4 mr-2" />
+          <ExternalLink className="h-3 w-3 mr-1" />
           Ver regalo
         </a>
       </Button>

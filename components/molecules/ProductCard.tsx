@@ -45,12 +45,12 @@ export function ProductCard({
       )}
     >
       <div className="relative overflow-hidden">
-        <ProductImage src={product.image_url} alt={product.title} />
+        <ProductImage src={product.image_url} alt={product.title} className="h-32" />
         {isReserved && <ReservationBadge />}
       </div>
 
-      <CardHeader className="pb-3">
-        <CardTitle className="text-lg leading-tight text-gray-700">{product.title}</CardTitle>
+      <CardHeader className="pb-2">
+        <CardTitle className="text-sm leading-tight text-gray-700">{product.title}</CardTitle>
       </CardHeader>
 
       <CardContent className="pt-0">
