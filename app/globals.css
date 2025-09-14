@@ -1,0 +1,172 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to use pastel colors: rosa, lila, celeste, amarillo y blanco */
+  --background: #fef7ff; /* Rosa pastel muy suave */
+  --foreground: #374151; /* Dark gray for text */
+  --card: #ffffff; /* White for product cards */
+  --card-foreground: #374151; /* Dark gray for card text */
+  --popover: #f9fafb; /* Very light gray for pop-ups */
+  --popover-foreground: #374151; /* Dark gray for pop-up text */
+  --primary: #e879f9; /* Lila pastel para botones principales */
+  --primary-foreground: #ffffff; /* White text on primary buttons */
+  --secondary: #e0f2fe; /* Celeste pastel para secciones */
+  --secondary-foreground: #6b7280; /* Muted gray for section text */
+  --muted: #fef3c7; /* Amarillo pastel muy suave para elementos muted */
+  --muted-foreground: #374151; /* Dark gray for muted text */
+  --accent: #fbbf24; /* Amarillo pastel para acentos */
+  --accent-foreground: #ffffff; /* White for accent text */
+  --destructive: #dc2626; /* Red for removal actions */
+  --destructive-foreground: #ffffff; /* White text on destructive actions */
+  --border: #f3e8ff; /* Rosa pastel muy suave para bordes */
+  --input: #ffffff; /* White for input fields */
+  --ring: #e879f9; /* Lila pastel para focus rings */
+  --chart-1: #e879f9;
+  --chart-2: #fbbf24;
+  --chart-3: #7dd3fc;
+  --chart-4: #f9a8d4;
+  --chart-5: #fef3c7;
+  --radius: 0.75rem; /* Rounded corners más suaves */
+  --sidebar: #fef7ff;
+  --sidebar-foreground: #374151;
+  --sidebar-primary: #e879f9;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fbbf24;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #f3e8ff;
+  --sidebar-ring: #e879f9;
+}
+
+.dark {
+  --background: #1f2937;
+  --foreground: #f9fafb;
+  --card: #374151;
+  --card-foreground: #f9fafb;
+  --popover: #374151;
+  --popover-foreground: #f9fafb;
+  --primary: #e879f9;
+  --primary-foreground: #1f2937;
+  --secondary: #4b5563;
+  --secondary-foreground: #f9fafb;
+  --muted: #4b5563;
+  --muted-foreground: #d1d5db;
+  --accent: #fbbf24;
+  --accent-foreground: #1f2937;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #4b5563;
+  --input: #374151;
+  --ring: #e879f9;
+  --chart-1: #eab308;
+  --chart-2: #fbbf24;
+  --chart-3: #fbbf24;
+  --chart-4: #fbbf24;
+  --chart-5: #fbbf24;
+  --radius: 0.75rem; /* Rounded corners más suaves */
+  --sidebar: #1f2937;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #e879f9;
+  --sidebar-primary-foreground: #1f2937;
+  --sidebar-accent: #fbbf24;
+  --sidebar-accent-foreground: #1f2937;
+  --sidebar-border: #4b5563;
+  --sidebar-ring: #e879f9;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Adding dreamy gradient background with circular shapes */
+    background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 25%, #e0f2fe 50%, #dbeafe 75%, #bfdbfe 100%);
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(circle at 20% 20%, rgba(251, 207, 232, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 80% 30%, rgba(233, 213, 255, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 40% 70%, rgba(186, 230, 253, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 70% 80%, rgba(254, 243, 199, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 10% 60%, rgba(249, 168, 212, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 90% 10%, rgba(196, 181, 253, 0.3) 0%, transparent 50%);
+  }
+}
+
+/* Adding custom float animation for the duck images */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Adding pulse animation for button clicks */
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
