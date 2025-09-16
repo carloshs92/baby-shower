@@ -11,6 +11,7 @@ export function ProductImage({ src, alt, className }: ProductImageProps) {
     <img
       src={src || "/placeholder.svg"}
       alt={alt}
+      
       className={cn("w-full h-48 object-cover", className)}
     />
   )

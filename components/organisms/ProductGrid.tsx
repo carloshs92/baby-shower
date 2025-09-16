@@ -125,10 +125,9 @@ export function ProductGrid({
       )}
       
       <AnimatedElement animation="fadeInUp" delay={200}>
-        <p className="text-gray-600 mt-6 p-4 rounded-md bg-pink-100 text-center text-lg shadow-sm shadow-pink-200">
-          Si pensaste en otro regalito para Emily 🐣🎀 que no esté en la lista (y que no sea mecedora o bañera)
-          🐥✨, no te preocupes, todo será recibido con mucho amor 💕🫶. Y si son pañales desde la talla P en
-          adelante, ¡serán de gran ayuda! 💕🍼💛
+        <p className="text-gray-600 mt-6 px-6 py-4 rounded-md bg-pink-100 text-center text-lg shadow-sm shadow-pink-200">
+          Si pensaste en otro regalito para Emily 🐣🎀 que no esté en la lista (y que no sea mecedora, bañera o biberones ) 🐥✨, no te preocupes, todo será recibido con mucho amor 💕🫶. 
+          <br/> Los pañales desde la talla P en adelante y la ropita a partir de 3M siempre serán de gran ayuda ☺️💕.
         </p>
       </AnimatedElement>
     </>

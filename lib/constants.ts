@@ -6,6 +6,12 @@ export interface Product {
 }
 
 export const HARDCODED_PRODUCTS: Product[] = [
+  {
+    "id": "juguetes-multisensorial-5-en-1",
+    "title": "Juguetes multisensorial 5 en 1",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/144663599/Juguetes-multisensorial-5-en-1/144663600",
+    "image_url": "/gifts/juguetes-multisensorial-5-en-1.webp"
+  },
 
   {
     "id": "nutria-hora-de-dormir-fisher-price",
@@ -83,7 +89,7 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "id": "fotop-ped-lotion-spray-50-isdin",
     "title": "Fotop Ped Lotion Spray 50- Isdin",
     "link": "https://www.falabella.com.pe/falabella-pe/product/17053697/Fotop-Isdin-Ped-Lotion-Spray-50/17053697",
-    "image_url": "/gifts/fotop-isdin-ped-lotion-spray.webp"
+    "image_url": "/gifts/fotop-isdin-ped-lotion-spray .webp"
   },
   {
     "id": "kit-para-el-cuidado-del-bebe-dr-browns",
