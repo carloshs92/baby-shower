@@ -1,6 +1,8 @@
-import { createServerClient } from "@supabase/ssr"
-import { cookies } from "next/headers"
-import { type NextRequest, NextResponse } from "next/server"
+import { cookies } from 'next/headers';
+import { NextRequest, NextResponse, type } from 'next/server';
+
+import { HARDCODED_PRODUCTS } from '@/lib/constants';
+import { createServerClient } from '@supabase/ssr';
 
 export async function GET() {
   const cookieStore = await cookies()
@@ -60,27 +62,44 @@ export async function POST(request: NextRequest) {
   try {
     const { product_id, user_email, user_name } = await request.json()
 
-    const { data: existingSelection, error: checkError } = await supabase
+    // Verificar si el usuario ya tiene este producto reservado
+    const { data: userExistingSelection, error: userCheckError } = await supabase
       .from("user_selections")
       .select("*")
       .eq("product_id", product_id)
+      .eq("user_email", user_email)
       .single()
 
-    if (checkError && checkError.code !== "PGRST116") {
-      // PGRST116 is "not found" error, which is expected if no one has reserved it
-      console.error("Error checking existing selection:", checkError)
-      return NextResponse.json({ error: checkError.message }, { status: 500 })
+    if (userCheckError && userCheckError.code !== "PGRST116") {
+      console.error("Error checking user existing selection:", userCheckError)
+      return NextResponse.json({ error: userCheckError.message }, { status: 500 })
     }
 
-    if (existingSelection) {
-      if (existingSelection.user_email === user_email) {
-        return NextResponse.json({ error: "Ya tienes este producto reservado" }, { status: 409 })
-      } else {
-        return NextResponse.json(
-          { error: `Este producto ya está reservado por ${existingSelection.user_name}` },
-          { status: 409 },
-        )
-      }
+    if (userExistingSelection) {
+      return NextResponse.json({ error: "Ya tienes este producto reservado" }, { status: 409 })
+    }
+
+    // Obtener todas las reservas existentes para este producto
+    const { data: existingReservations, error: reservationsError } = await supabase
+      .from("user_selections")
+      .select("*")
+      .eq("product_id", product_id)
+
+    if (reservationsError) {
+      console.error("Error checking existing reservations:", reservationsError)
+      return NextResponse.json({ error: reservationsError.message }, { status: 500 })
+    }
+
+    // Obtener la información del producto para verificar la cantidad máxima
+    const product = HARDCODED_PRODUCTS.find(p => p.id === product_id);
+    const maxQuantity = product?.quantity || 1;
+    const currentReservations = existingReservations?.length || 0;
+
+    if (currentReservations >= maxQuantity) {
+      return NextResponse.json(
+        { error: "Este producto ya ha alcanzado su límite máximo de reservas" },
+        { status: 409 },
+      )
     }
 
     const { data, error } = await supabase

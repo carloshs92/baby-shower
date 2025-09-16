@@ -10,6 +10,7 @@ interface Product {
   title: string
   link: string
   image_url: string
+  quantity: number
 }
 
 interface UserSelection {
@@ -21,19 +22,25 @@ interface UserSelection {
 }
 
 interface ProductCardProps {
-  product: Product
-  reservation?: UserSelection
-  isReservedByUser: boolean
-  isReserved: boolean
-  onAddToWishlist: (productId: string) => void
-  onRemoveFromWishlist: (productId: string) => void
+  readonly product: Product
+  readonly reservation?: UserSelection
+  readonly reservations?: UserSelection[]
+  readonly isReservedByUser: boolean
+  readonly isReserved: boolean
+  readonly isFullyReserved: boolean
+  readonly availableQuantity: number
+  readonly onAddToWishlist: (productId: string) => void
+  readonly onRemoveFromWishlist: (productId: string) => void
 }
 
 export function ProductCard({
   product,
   reservation,
+  reservations = [],
   isReservedByUser,
   isReserved,
+  isFullyReserved,
+  availableQuantity,
   onAddToWishlist,
   onRemoveFromWishlist
 }: ProductCardProps) {
@@ -46,7 +53,7 @@ export function ProductCard({
     >
       <div className="relative overflow-hidden">
         <ProductImage src={product.image_url} alt={product.title} className="h-32" />
-        {isReserved && <ReservationBadge />}
+        {isReserved && <ReservationBadge reservations={reservations} totalQuantity={product.quantity} />}
       </div>
 
       <CardHeader className="pb-2">
@@ -54,11 +61,19 @@ export function ProductCard({
       </CardHeader>
 
       <CardContent className="pt-0">
-        {reservation && <ReservationInfo userName={reservation.user_name} />}
+        {reservations.length > 0 && (
+          <ReservationInfo 
+            reservations={reservations} 
+            totalQuantity={product.quantity}
+            availableQuantity={availableQuantity}
+          />
+        )}
 
         <ProductActions
           isReservedByUser={isReservedByUser}
           isReserved={isReserved}
+          isFullyReserved={isFullyReserved}
+          availableQuantity={availableQuantity}
           productId={product.id}
           productLink={product.link}
           onAddToWishlist={onAddToWishlist}

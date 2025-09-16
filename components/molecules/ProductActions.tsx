@@ -3,17 +3,21 @@ import { Crown, ExternalLink, UserMinus, UserPlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface ProductActionsProps {
-  isReservedByUser: boolean
-  isReserved: boolean
-  productId: string
-  productLink: string
-  onAddToWishlist: (productId: string) => void
-  onRemoveFromWishlist: (productId: string) => void
+  readonly isReservedByUser: boolean
+  readonly isReserved: boolean
+  readonly isFullyReserved: boolean
+  readonly availableQuantity: number
+  readonly productId: string
+  readonly productLink: string
+  readonly onAddToWishlist: (productId: string) => void
+  readonly onRemoveFromWishlist: (productId: string) => void
 }
 
 export function ProductActions({
   isReservedByUser,
   isReserved,
+  isFullyReserved,
+  availableQuantity,
   productId,
   productLink,
   onAddToWishlist,
@@ -31,7 +35,7 @@ export function ProductActions({
           <UserMinus className="h-3 w-3 mr-1" />
           Cancelar Reserva
         </Button>
-      ) : !isReserved ? (
+      ) : !isFullyReserved ? (
         <Button
           onClick={() => onAddToWishlist(productId)}
           size="sm"
@@ -49,7 +53,7 @@ export function ProductActions({
       ) : (
         <Button disabled size="sm" className="w-full bg-gray-300 text-gray-500 cursor-not-allowed text-xs h-8">
           <Crown className="h-3 w-3 mr-1" />
-          Ya Reservado
+          Agotado
         </Button>
       )}
 

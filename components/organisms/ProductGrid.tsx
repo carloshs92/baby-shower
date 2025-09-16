@@ -9,6 +9,7 @@ interface Product {
   title: string
   link: string
   image_url: string
+  quantity: number
 }
 
 interface UserSelection {
@@ -20,11 +21,11 @@ interface UserSelection {
 }
 
 interface ProductGridProps {
-  products: Product[]
-  userSelections: UserSelection[]
-  userEmail: string
-  onAddToWishlist: (productId: string) => void
-  onRemoveFromWishlist: (productId: string) => void
+  readonly products: Product[]
+  readonly userSelections: UserSelection[]
+  readonly userEmail: string
+  readonly onAddToWishlist: (productId: string) => void
+  readonly onRemoveFromWishlist: (productId: string) => void
 }
 
 export function ProductGrid({ 
@@ -36,25 +37,38 @@ export function ProductGrid({
 }: ProductGridProps) {
   const [showOnlyAvailable, setShowOnlyAvailable] = useState(false);
 
-  const getUserForProduct = (productId: string) => {
-    return userSelections.find((item) => item.product_id === productId)
+  const getUsersForProduct = (productId: string) => {
+    return userSelections.filter((item) => item.product_id === productId)
   }
 
   const isProductReservedByUser = (productId: string) => {
-    const reservation = getUserForProduct(productId)
-    return reservation?.user_email === userEmail
+    const reservations = getUsersForProduct(productId)
+    return reservations.some(reservation => reservation.user_email === userEmail)
   }
 
   const isProductReserved = (productId: string) => {
-    return getUserForProduct(productId) !== undefined
+    const reservations = getUsersForProduct(productId)
+    return reservations.length > 0
+  }
+
+  const isProductFullyReserved = (productId: string) => {
+    const product = products.find(p => p.id === productId)
+    const reservations = getUsersForProduct(productId)
+    return product ? reservations.length >= product.quantity : false
+  }
+
+  const getAvailableQuantity = (productId: string) => {
+    const product = products.find(p => p.id === productId)
+    const reservations = getUsersForProduct(productId)
+    return product ? product.quantity - reservations.length : 0
   }
 
   // Filtrar productos según el estado del filtro
   const filteredProducts = showOnlyAvailable 
-    ? products.filter(product => !isProductReserved(product.id))
+    ? products.filter(product => !isProductFullyReserved(product.id))
     : products;
 
-  const availableCount = products.filter(product => !isProductReserved(product.id)).length;
+  const availableCount = products.filter(product => !isProductFullyReserved(product.id)).length;
   const totalCount = products.length;
 
   const handleToggleFilter = () => {
@@ -87,9 +101,12 @@ export function ProductGrid({
       {filteredProducts.length > 0 ? (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3">
           {filteredProducts.map((product, index) => {
-            const reservation = getUserForProduct(product.id)
+            const reservations = getUsersForProduct(product.id)
+            const reservation = reservations[0] // Mostrar la primera reserva como referencia
             const isReservedByUser = isProductReservedByUser(product.id)
             const isReserved = isProductReserved(product.id)
+            const isFullyReserved = isProductFullyReserved(product.id)
+            const availableQuantity = getAvailableQuantity(product.id)
 
             const animation = index % 3 === 0 ? 'fadeInLeft' : index % 3 === 1 ? 'fadeInUp' : 'fadeInRight';
             const delay = (index % 4) * 100;
@@ -99,8 +116,11 @@ export function ProductGrid({
                 <ProductCard
                   product={product}
                   reservation={reservation}
+                  reservations={reservations}
                   isReservedByUser={isReservedByUser}
                   isReserved={isReserved}
+                  isFullyReserved={isFullyReserved}
+                  availableQuantity={availableQuantity}
                   onAddToWishlist={onAddToWishlist}
                   onRemoveFromWishlist={onRemoveFromWishlist}
                 />
