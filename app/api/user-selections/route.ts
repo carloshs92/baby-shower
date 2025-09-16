@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers';
-import { NextRequest, NextResponse, type } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 import { HARDCODED_PRODUCTS } from '@/lib/constants';
 import { createServerClient } from '@supabase/ssr';
@@ -76,7 +76,9 @@ export async function POST(request: NextRequest) {
     }
 
     if (userExistingSelection) {
-      return NextResponse.json({ error: "Ya tienes este producto reservado" }, { status: 409 })
+      return NextResponse.json({ 
+        error: "Ya elegiste este regalo para Emily. Actualiza la página para ver el estado actual." 
+      }, { status: 409 })
     }
 
     // Obtener todas las reservas existentes para este producto
@@ -97,7 +99,7 @@ export async function POST(request: NextRequest) {
 
     if (currentReservations >= maxQuantity) {
       return NextResponse.json(
-        { error: "Este producto ya ha alcanzado su límite máximo de reservas" },
+        { error: "Este regalo ya fue elegido por alguien más para Emily. Actualiza la página para ver el estado actual." },
         { status: 409 },
       )
     }

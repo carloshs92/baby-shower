@@ -20,7 +20,7 @@ export function ReservationInfo({ reservations, totalQuantity, availableQuantity
     <div className="mb-2 p-2 bg-gradient-to-r from-yellow-50 to-yellow-50 rounded-lg border border-yellow-200">
       <div className="flex justify-between items-center mb-1">
         <p className="text-xs text-yellow-600">
-          {isFullyReserved ? 'Reservado' : `Reservado (${reservedCount}/${totalQuantity})`}
+          {isFullyReserved ? 'Elegido para Emily' : `Elegido (${reservedCount}/${totalQuantity})`}
         </p>
         {availableQuantity > 0 && (
           <p className="text-xs text-green-600 font-medium">

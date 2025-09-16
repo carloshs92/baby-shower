@@ -18,7 +18,7 @@ export function Header() {
           </AnimatedElement>
           <AnimatedElement animation="fadeInUp" delay={200}>
             <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent text-center">
+              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent text-center">
                 Lista de regalos de Emily
               </h1>
             </div>

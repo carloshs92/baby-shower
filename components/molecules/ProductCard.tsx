@@ -23,7 +23,6 @@ interface UserSelection {
 
 interface ProductCardProps {
   readonly product: Product
-  readonly reservation?: UserSelection
   readonly reservations?: UserSelection[]
   readonly isReservedByUser: boolean
   readonly isReserved: boolean
@@ -35,7 +34,6 @@ interface ProductCardProps {
 
 export function ProductCard({
   product,
-  reservation,
   reservations = [],
   isReservedByUser,
   isReserved,
@@ -71,9 +69,7 @@ export function ProductCard({
 
         <ProductActions
           isReservedByUser={isReservedByUser}
-          isReserved={isReserved}
           isFullyReserved={isFullyReserved}
-          availableQuantity={availableQuantity}
           productId={product.id}
           productLink={product.link}
           onAddToWishlist={onAddToWishlist}

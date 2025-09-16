@@ -79,13 +79,12 @@ export function ProductGrid({
     <>
       <AnimatedElement animation="fadeInUp" delay={100}>
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-700 mb-2">Lista de Regalos</h2>
           <p className="text-gray-600">
             Gracias por acompañarnos en esta etapa tan especial. Si deseas sorprender a nuestra pequeña Emily 🎀🐣
             con un detalle, aquí te dejamos algunas ideas que nos serán de gran ayuda para su llegada.
           </p>
           <br />
-          <i className="text-gray-600">Reserva haciendo clic en "Reservar regalo"</i>
+          <i className="text-gray-600 font-bold text-lg">Elige un regalo haciendo clic en "Elegir para Emily"</i>
         </div>
       </AnimatedElement>
 
@@ -102,7 +101,6 @@ export function ProductGrid({
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3">
           {filteredProducts.map((product, index) => {
             const reservations = getUsersForProduct(product.id)
-            const reservation = reservations[0] // Mostrar la primera reserva como referencia
             const isReservedByUser = isProductReservedByUser(product.id)
             const isReserved = isProductReserved(product.id)
             const isFullyReserved = isProductFullyReserved(product.id)
@@ -115,7 +113,6 @@ export function ProductGrid({
               <AnimatedElement key={product.id} animation={animation} delay={delay}>
                 <ProductCard
                   product={product}
-                  reservation={reservation}
                   reservations={reservations}
                   isReservedByUser={isReservedByUser}
                   isReserved={isReserved}
@@ -135,10 +132,10 @@ export function ProductGrid({
               <span className="text-3xl">🎁</span>
             </div>
             <h3 className="text-xl font-semibold text-gray-700 mb-2">
-              ¡Todos los regalos han sido reservados!
+              ¡Todos los regalos han sido elegidos!
             </h3>
             <p className="text-gray-600">
-              Gracias por tu generosidad. Todos los regalos de la lista ya han sido reservados.
+              Gracias por tu generosidad. Todos los regalos de la lista ya han sido elegidos para Emily.
             </p>
           </div>
         </AnimatedElement>

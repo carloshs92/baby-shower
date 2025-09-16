@@ -64,6 +64,8 @@ export function useWishlist() {
           description: errorData.error,
           variant: "destructive",
         })
+        // Recargar las reservas para mostrar el estado actualizado
+        await loadUserSelections()
         return
       }
 
@@ -74,14 +76,14 @@ export function useWishlist() {
       await loadUserSelections()
 
       toast({
-        title: "¡Reservado!",
-        description: "Regalo reservado exitosamente",
+        title: "✅ ¡Elegido para Emily!",
+        description: "Regalo elegido exitosamente",
       })
     } catch (error) {
       console.error("Error adding to wishlist:", error)
       toast({
         title: "Error",
-        description: "No se pudo reservar el regalo",
+        description: "No se pudo elegir el regalo para Emily",
         variant: "destructive",
       })
     }
@@ -100,14 +102,14 @@ export function useWishlist() {
       await loadUserSelections()
 
       toast({
-        title: "Reserva Cancelada",
-        description: "Regalo cancelado de tu lista",
+        title: "Cambio realizado",
+        description: "Ahora puedes elegir otro regalo para Emily",
       })
     } catch (error) {
       console.error("Error removing from wishlist:", error)
       toast({
         title: "Error",
-        description: "No se pudo cancelar la reserva",
+        description: "No se pudo cambiar la elección",
         variant: "destructive",
       })
     }

@@ -4,9 +4,7 @@ import { Button } from '@/components/ui/button';
 
 interface ProductActionsProps {
   readonly isReservedByUser: boolean
-  readonly isReserved: boolean
   readonly isFullyReserved: boolean
-  readonly availableQuantity: number
   readonly productId: string
   readonly productLink: string
   readonly onAddToWishlist: (productId: string) => void
@@ -15,9 +13,7 @@ interface ProductActionsProps {
 
 export function ProductActions({
   isReservedByUser,
-  isReserved,
   isFullyReserved,
-  availableQuantity,
   productId,
   productLink,
   onAddToWishlist,
@@ -33,7 +29,7 @@ export function ProductActions({
           className="w-full text-xs h-8"
         >
           <UserMinus className="h-3 w-3 mr-1" />
-          Cancelar Reserva
+          Elegir otro regalo
         </Button>
       ) : !isFullyReserved ? (
         <Button
@@ -48,12 +44,12 @@ export function ProductActions({
           data-product-id={productId}
         >
           <UserPlus className="h-3 w-3 mr-1" />
-          Reservar regalo
+          Elegir para Emily
         </Button>
       ) : (
         <Button disabled size="sm" className="w-full bg-gray-300 text-gray-500 cursor-not-allowed text-xs h-8">
           <Crown className="h-3 w-3 mr-1" />
-          Agotado
+          Ya elegido
         </Button>
       )}
 

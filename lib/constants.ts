@@ -7,6 +7,13 @@ export interface Product {
 }
 
 export const HARDCODED_PRODUCTS: Product[] = [
+{
+  "id": "juguete-didactico-imanix-set-piezas-baby",
+  "title": "Juguete didáctico Imanix set de piezas baby",
+  "link": "https://www.tailoy.com.pe/imanix-set-de-piezas-baby-granja-12-pzs-99306.html",
+  "image_url": "/gifts/juguete-didactico-imanix-set-piezas-baby.jpg",
+  "quantity": 1
+},
   {
     "id": "juguetes-multisensorial-5-en-1",
     "title": "Juguetes multisensorial 5 en 1",
@@ -97,14 +104,14 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "title": "Fotoprotector Fusion Fluid baby- Isdin",
     "link": "https://www.falabella.com.pe/falabella-pe/product/16202828/ISDIN-Fotoprotector-Fusion-Fluid-MINERAL-BABY-SPF50-50ML-Bloqueador-solar-facial-para-ninos/16202828",
     "image_url": "/gifts/isdin-fotoprotector-fusion-fluida.webp",
-    "quantity": 1
+    "quantity": 2
   },
   {
     "id": "fotop-ped-lotion-spray-50-isdin",
     "title": "Fotop Ped Lotion Spray 50- Isdin",
     "link": "https://www.falabella.com.pe/falabella-pe/product/17053697/Fotop-Isdin-Ped-Lotion-Spray-50/17053697",
     "image_url": "/gifts/fotop-isdin-ped-lotion-spray .webp",
-    "quantity": 1
+    "quantity": 2
   },
   {
     "id": "kit-para-el-cuidado-del-bebe-dr-browns",
@@ -295,14 +302,14 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "title": "Baño y Shampoo Eucerin Baby",
     "link": "https://www.falabella.com.pe/falabella-pe/product/17586270/Eucerin-Baby-Wash-And-Shampoo-400ml/17586270",
     "image_url": "/gifts/eucerin-baby-wash-and-shampoo.webp",
-    "quantity": 1
+    "quantity": 2
   },
   {
     "id": "eucerin-baby-lotion",
     "title": "Crema coorporal Eucerin Baby",
     "link": "https://www.falabella.com.pe/falabella-pe/product/17586245/Eucerin-Baby-Lotion-400ml/17586245",
     "image_url": "/gifts/eucerin-baby-lotion.webp",
-    "quantity": 1
+    "quantity": 2
   },
   {
     "id": "cuna-corral-colecho",

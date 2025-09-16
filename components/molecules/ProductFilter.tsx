@@ -16,7 +16,7 @@ export function ProductFilter({
   totalCount 
 }: ProductFilterProps) {
   return (
-    <div className="flex items-center justify-between mb-6 p-4 bg-white/80 backdrop-blur-sm rounded-lg border border-purple-100 shadow-sm">
+    <div className="flex items-center justify-between mb-6 py-2 md:py-4 px-3 md:px-4 bg-white/80 backdrop-blur-sm rounded-lg border border-purple-100 shadow-sm">
       <div className="flex items-center gap-4">
         <div className="hidden md:flex items-center gap-2">
           <Filter className="h-4 w-4 text-purple-600" />
