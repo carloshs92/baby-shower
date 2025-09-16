@@ -49,6 +49,7 @@ export function LoginForm({ onSubmit }: LoginFormProps) {
             </Label>
             <Input
               id="name"
+              name='name'
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}

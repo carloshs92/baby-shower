@@ -6,6 +6,111 @@ export interface Product {
 }
 
 export const HARDCODED_PRODUCTS: Product[] = [
+
+  {
+    "id": "nutria-hora-de-dormir-fisher-price",
+    "title": "Nutria hora de dormir- Fisher Price",
+    "link": "https://www.tailoy.com.pe/fisher-price-nutria-hora-de-dormir-ghl41-39881.html?media_type=image&utm_source=facebook&utm_medium=cpc&utm_campaign=Z+-+Advantage++-+Conversiones+-+V2&utm_content=FB_CAT_Mes+del+Beb%C3%A9_03/09/25al30/09/25&utm_id=120221819963040726&utm_term=120221819963030726&fbclid=PAdGRleAMy5BdleHRuA2FlbQEwAGFkaWQBqyUYtJo_9gGnCuT4uBXQThvsuPkOK99h_uK-ebzwb5o-BgyNki4Ysi-vDxZ92erAYDTJALE_aem_ODFOutUpPWxjzRlJz0micQ",
+    "image_url": "/gifts/nutria-hora-de-dormir-fisher-price.jpg"
+  },
+  {
+    "id": "silla-de-comer-rio-carestino",
+    "title": "Silla de comer Rio- Carestino",
+    "link": "https://www.carestino.com.pe/producto/silla-de-comer-rio-rosa/",
+    "image_url": "/gifts/silla-de-comer-rio-rosa.jpg"
+  },
+  {
+    "id": "bacn-rosa-carestino",
+    "title": "Bac’n rosa- Carestino",
+    "link": "https://www.carestino.com.pe/producto/bacin-entrenamiento-3-en-1-con-reductor-rosa/",
+    "image_url": "/gifts/bacin-entrenamiento-3-en-1.jpg"
+  },
+  {
+    "id": "corral-plegable-puede-ser-este-u-otro",
+    "title": "Corral plegable (puede ser éste u otro)",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/883172949/Corral-Plegable-Scoop-Con-Panel-De-Actividades-145-X-145-Cm/883172950",
+    "image_url": "/gifts/corral-plegable-scoop.webp"
+  },
+  {
+    "id": "ajuar-overall-rosado",
+    "title": "Ajuar Overall rosado",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/126276937/Ajuar-Overall-de-Hilo-para-Bebe-Nina-Rosado-de-Algodon-4-Piezas/126276939",
+    "image_url": "/gifts/ajuar-overall-hilo-bebe.webp"
+  },
+  {
+    "id": "manta-plush-jacquard-beige",
+    "title": "Manta reversible beige- Wawa Pima",
+    "link": "https://wawapima.pe/producto/manta-reversible-plush-jackard-beige/",
+    "image_url": "/gifts/manta-plush-jacquard-beige.webp"
+  },
+  {
+    "id": "conjunto-dos-piezas-jacquard-bebe-wawa-pima",
+    "title": "Set de 2 piezas violeta- 0-3M- Wawa Pima",
+    "link": "https://wawapima.pe/producto/set-de-2-piezas-lila-chaqueta-y-pantalon-2/",
+    "image_url": "/gifts/conjunto-dos-piezas-jacquard-bebe-wawa-pima.webp"
+  },
+  {
+    "id": "set-de-3-piezas-rosa-0-3m-wawa-pima",
+    "title": "Set de 3 piezas rosa- 0-3M- Wawa Pima",
+    "link": "https://wawapima.pe/producto/set-de-3-pzas-rosa-fucsia-chaqueta-pantalon-gorro-copia/",
+    "image_url": "/gifts/body-cruzado-set-3-piezas.webp"
+  },
+  {
+    "id": "set-de-3-piezas-margarita-rn-wawa-pima",
+    "title": "Set de 3 piezas margarita- RN- Wawa Pima",
+    "link": "https://wawapima.pe/producto/set-de-3-pzas-margarita-chaqueta-pantalon-gorro-reversible/",
+    "image_url": "/gifts/conjunto-tres-piezas-bebe.webp"
+  },
+  {
+    "id": "juguete-giratorio-para-silla-de-comer-infanti",
+    "title": "Juguete giratorio para silla de comer- Infanti",
+    "link": "https://simple.ripley.com.pe/juguete-giratorio-para-silla-de-comer-pmp20000974951?s=mdco",
+    "image_url": "/gifts/juguete-giratorio-para-silla.jpeg"
+  },
+  {
+    "id": "limpiador-de-biberones-y-alimentos-700ml-pigeon",
+    "title": "Limpiador de biberones y alimentos 700ml- Pigeon",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/16295259/Limpiador-Liquido-700-ml/16295259",
+    "image_url": "/gifts/limpiador-liquido-700.webp"
+  },
+  {
+    "id": "fotoprotector-fusion-fluid-baby-isdin",
+    "title": "Fotoprotector Fusion Fluid baby- Isdin",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/16202828/ISDIN-Fotoprotector-Fusion-Fluid-MINERAL-BABY-SPF50-50ML-Bloqueador-solar-facial-para-ninos/16202828",
+    "image_url": "/gifts/isdin-fotoprotector-fusion-fluida.webp"
+  },
+  {
+    "id": "fotop-ped-lotion-spray-50-isdin",
+    "title": "Fotop Ped Lotion Spray 50- Isdin",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/17053697/Fotop-Isdin-Ped-Lotion-Spray-50/17053697",
+    "image_url": "/gifts/fotop-isdin-ped-lotion-spray.webp"
+  },
+  {
+    "id": "kit-para-el-cuidado-del-bebe-dr-browns",
+    "title": "Kit para el cuidado del Bebé- Dr. Brown's",
+    "link": "https://www.plazavea.com.pe/kit-dr--brown-s-para-el-cuidado-del-bebe/p?gad_source=1&gad_campaignid=21036918438&gbraid=0AAAAADNWOn175t06mCdEipmess3Xlm9up&gclid=Cj0KCQjw8p7GBhCjARIsAEhghZ0x1XNhKJcGpHAawSxcsxWbWcKAt8uKoce6Q5U_-uo6ZGtTaOXTGdgaAhotEALw_wcB",
+    "image_url": "/gifts/kit-cuidado-bebe-dr.webp"
+  },
+  {
+    "id": "cepillo-soft-touch-color-rosado-dr-browns",
+    "title": "Cepillo Soft Touch color Rosado- Dr. Brown's",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/116496420/Cepillo-Soft-Touch-color-Rosado/116496421",
+    "image_url": "/gifts/cepillo-soft-touch-color-rosado.webp"
+  },
+  {
+    "id": "sacaleche-shell-de-1-unid-75ml-haakaa",
+    "title": "Sacaleche shell de 1 unid 75ml- Haakaa",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/142305200/Sacaleches-manos-libres-shell-1-unid-(75ml)/142305201",
+    "image_url": "/gifts/sacaleches-manos-libres.webp"
+  },
+  {
+    "id": "aspirador-nasal-haakaa",
+    "title": "Aspirador nasal- Haakaa",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/120000681/Aspirador-nasal-de-silicona-Easy-Squeezy-0m/120000682",
+    "image_url": "/gifts/aspirador-nasal-de-silicona.webp"
+  },
+
+
   {
     "id": "cambiador-2-en-1-maternelle",
     "title": "Cambiador 2 en 1- Maternelle",
@@ -139,58 +244,58 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "image_url": "/gifts/babero-pack-3-bebe-carters.webp"
   },
   {
-    "id": "bathtub",
+    "id": "eucerin-baby-wash-and-shampoo",
     "title": "Baño y Shampoo Eucerin Baby",
     "link": "https://www.falabella.com.pe/falabella-pe/product/17586270/Eucerin-Baby-Wash-And-Shampoo-400ml/17586270",
-    "image_url": "/baby-bathtub-with-stand.jpg"
+    "image_url": "/gifts/eucerin-baby-wash-and-shampoo.webp"
   },
   {
-    "id": "humidifier",
+    "id": "eucerin-baby-lotion",
     "title": "Crema coorporal Eucerin Baby",
     "link": "https://www.falabella.com.pe/falabella-pe/product/17586245/Eucerin-Baby-Lotion-400ml/17586245",
-    "image_url": "/baby-room-humidifier-with-night-light.jpg"
+    "image_url": "/gifts/eucerin-baby-lotion.webp"
   },
   {
-    "id": "crib",
+    "id": "cuna-corral-colecho",
     "title": "Practicuna corral y colecho JENA- Carestino (107.5 x 75 cm)",
     "link": "https://www.carestino.com.pe/producto/cuna-corral-colecho-jena-beige/",
-    "image_url": "/wooden-convertible-baby-crib.jpg"
+    "image_url": "/gifts/cuna-corral-colecho.jpg"
   },
   {
-    "id": "crib",
+    "id": "colchon-impermeable-para-cuna",
     "title": "Colchon Impermeable para Cuna Corral (104x70x9)- Carestino",
     "link": "https://www.carestino.com.pe/producto/colchon-impermeable-para-cuna-corral-104x70x9cm-blanco/",
-    "image_url": "/wooden-convertible-baby-crib.jpg"
+    "image_url": "/gifts/colchon-impermeable-para-cuna.jpg"
   },
   {
-    "id": "crib",
+    "id": "sabanas-300-hilos-para-cuna",
     "title": "Sabanas 300 Hilos Practicuna 70x104cm",
     "link": "https://www.carestino.com.pe/producto/sabanas-300-hilos-para-cuna-corral-de-70x104cm-rosa/",
-    "image_url": "/wooden-convertible-baby-crib.jpg"
+    "image_url": "/gifts/sabanas-300-hilos-para-cuna.webp"
   },
   {
-    "id": "crib",
+    "id": "juego-de-sabana-maternelle",
     "title": "Juego de Sábanas- Maternelle",
     "link": "https://www.maternelle.pe/products/juego-de-sabanas-para-pack-and-play-estrellas-rosado?_pos=7&_sid=8d296d60d&_ss=r",
-    "image_url": "/wooden-convertible-baby-crib.jpg"
+    "image_url": "/gifts/juego-de-sabana-maternelle.jpg"
   },
   {
-    "id": "stroller",
+    "id": "coche-cuna-infanti-genova",
     "title": "Coche Cuna Genova 2G Gold- Infanti",
     "link": "https://simple.ripley.com.pe/coche-cuna-infanti-genova-2g-2039363456672p?color_80=rosado&s=mdco",
-    "image_url": "/3-in-1-baby-stroller-system.jpg"
+    "image_url": "/gifts/coche-cuna-infanti-genova.webp"
   },
   {
-    "id": "toys",
+    "id": "arco-sonajero-huanger",
     "title": "Arco para Coche con sonajero-  Huanger",
     "link": "https://simple.ripley.com.pe/arco-sonajero-huanger-con-sonidos-y-texturas-multifuncional-he0315-pmp20000012240?color_80=multicolor&s=mdco",
-    "image_url": "/baby-sensory-toys-educational.jpg"
+    "image_url": "/gifts/arco-sonajero-huanger.webp"
   },
   {
-    "id": "toys",
+    "id": "juguete-bebe-fisher-price-musical",
     "title": "Juguete hermanita aprende conmigo- Fisher Price",
     "link": "https://simple.ripley.com.pe/juguete-bebe-fisher-price-hermanita-aprende-conmigo-jfd19-2032354488065p?color_80=multicolor&s=mdco",
-    "image_url": "/baby-sensory-toys-educational.jpg"
+    "image_url": "/gifts/juguete-bebe-fisher-price-musical.webp"
   }
 ]
 
