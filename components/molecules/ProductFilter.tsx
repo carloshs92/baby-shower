@@ -52,7 +52,7 @@ export function ProductFilter({
               : "border-pink-200 hover:bg-pink-500 text-pink-700"
           }`}
         >
-          {showOnlyUserSelections ? "Mostrar todos" : "Mis elecciones"}
+          {showOnlyUserSelections ? "Mostrar todos" : "Mi regalo elegido"}
         </Button>
       </div>
       

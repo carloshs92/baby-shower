@@ -103,6 +103,11 @@ export function ProductGrid({
     setShowWelcomeModal(false);
   };
 
+  const handleShowAvailable = () => {
+    setShowOnlyAvailable(true);
+    setShowOnlyUserSelections(false);
+  };
+
   return (
     <>
       <AnimatedElement animation="fadeInUp" delay={100}>
@@ -163,12 +168,31 @@ export function ProductGrid({
             <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
               <span className="text-3xl">🎁</span>
             </div>
-            <h3 className="text-xl font-semibold text-gray-700 mb-2">
-              ¡Todos los regalos han sido elegidos!
-            </h3>
-            <p className="text-gray-600">
-              Gracias por tu generosidad. Todos los regalos de la lista ya han sido elegidos para Emily.
-            </p>
+            {showOnlyUserSelections ? (
+              <>
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                  ¡Aún no has elegido ningún regalo!
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Explora nuestra lista de regalos y elige algo especial para Emily.
+                </p>
+                <button
+                  onClick={handleShowAvailable}
+                  className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+                >
+                  Ver regalos disponibles
+                </button>
+              </>
+            ) : (
+              <>
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                  ¡Todos los regalos han sido elegidos!
+                </h3>
+                <p className="text-gray-600">
+                  Gracias por tu generosidad. Todos los regalos de la lista ya han sido elegidos para Emily.
+                </p>
+              </>
+            )}
           </div>
         </AnimatedElement>
       )}
