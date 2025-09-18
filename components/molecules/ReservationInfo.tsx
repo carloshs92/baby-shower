@@ -1,3 +1,5 @@
+import { obfuscateName } from '@/lib/utils';
+
 interface UserSelection {
   id: string
   product_id: string
@@ -10,9 +12,10 @@ interface ReservationInfoProps {
   readonly reservations: UserSelection[]
   readonly totalQuantity: number
   readonly availableQuantity: number
+  readonly currentUserEmail: string
 }
 
-export function ReservationInfo({ reservations, totalQuantity, availableQuantity }: ReservationInfoProps) {
+export function ReservationInfo({ reservations, totalQuantity, availableQuantity, currentUserEmail }: ReservationInfoProps) {
   const reservedCount = reservations.length;
   const isFullyReserved = reservedCount >= totalQuantity;
   
@@ -33,7 +36,7 @@ export function ReservationInfo({ reservations, totalQuantity, availableQuantity
         <div className="space-y-1">
           {reservations.map((reservation, index) => (
             <p key={reservation.id} className="text-sm font-bold text-yellow-700">
-              {reservation.user_name}
+              {obfuscateName(reservation.user_name, currentUserEmail, reservation.user_email)}
             </p>
           ))}
         </div>

@@ -28,6 +28,7 @@ interface ProductCardProps {
   readonly isReserved: boolean
   readonly isFullyReserved: boolean
   readonly availableQuantity: number
+  readonly currentUserEmail: string
   readonly onAddToWishlist: (productId: string) => void
   readonly onRemoveFromWishlist: (productId: string) => void
 }
@@ -39,6 +40,7 @@ export function ProductCard({
   isReserved,
   isFullyReserved,
   availableQuantity,
+  currentUserEmail,
   onAddToWishlist,
   onRemoveFromWishlist
 }: ProductCardProps) {
@@ -64,6 +66,7 @@ export function ProductCard({
             reservations={reservations} 
             totalQuantity={product.quantity}
             availableQuantity={availableQuantity}
+            currentUserEmail={currentUserEmail}
           />
         )}
 

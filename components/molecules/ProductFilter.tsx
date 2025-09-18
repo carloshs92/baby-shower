@@ -3,16 +3,22 @@ import { Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface ProductFilterProps {
-  showOnlyAvailable: boolean;
-  onToggleFilter: () => void;
-  availableCount: number;
-  totalCount: number;
+  readonly showOnlyAvailable: boolean;
+  readonly showOnlyUserSelections: boolean;
+  readonly onToggleFilter: () => void;
+  readonly onToggleUserSelections: () => void;
+  readonly availableCount: number;
+  readonly userSelectionsCount: number;
+  readonly totalCount: number;
 }
 
 export function ProductFilter({ 
   showOnlyAvailable, 
+  showOnlyUserSelections,
   onToggleFilter, 
+  onToggleUserSelections,
   availableCount, 
+  userSelectionsCount,
   totalCount 
 }: ProductFilterProps) {
   return (
@@ -35,12 +41,29 @@ export function ProductFilter({
         >
           {showOnlyAvailable ? "Mostrar todos" : "Solo disponibles"}
         </Button>
+        
+        <Button
+          variant={showOnlyUserSelections ? "default" : "outline"}
+          size="sm"
+          onClick={onToggleUserSelections}
+          className={`text-xs h-8 ${
+            showOnlyUserSelections 
+              ? "bg-pink-600 hover:bg-pink-700 text-white" 
+              : "border-pink-200 hover:bg-pink-500 text-pink-700"
+          }`}
+        >
+          {showOnlyUserSelections ? "Mostrar todos" : "Mis elecciones"}
+        </Button>
       </div>
       
       <div className="text-sm text-gray-600">
         {showOnlyAvailable ? (
           <span>
             Mostrando <span className="font-semibold text-purple-600">{availableCount}</span> de {totalCount} regalos
+          </span>
+        ) : showOnlyUserSelections ? (
+          <span>
+            Mostrando <span className="font-semibold text-pink-600">{userSelectionsCount}</span> de {totalCount} regalos
           </span>
         ) : (
           <span>

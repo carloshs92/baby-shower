@@ -37,6 +37,7 @@ export function ProductGrid({
   onRemoveFromWishlist 
 }: ProductGridProps) {
   const [showOnlyAvailable, setShowOnlyAvailable] = useState(false);
+  const [showOnlyUserSelections, setShowOnlyUserSelections] = useState(false);
   const [showWelcomeModal, setShowWelcomeModal] = useState(true);
 
   const getUsersForProduct = (productId: string) => {
@@ -68,13 +69,34 @@ export function ProductGrid({
   // Filtrar productos según el estado del filtro
   const filteredProducts = showOnlyAvailable 
     ? products.filter(product => !isProductFullyReserved(product.id))
+    : showOnlyUserSelections
+    ? products.filter(product => isProductReservedByUser(product.id))
     : products;
 
   const availableCount = products.filter(product => !isProductFullyReserved(product.id)).length;
+  const userSelectionsCount = products.filter(product => isProductReservedByUser(product.id)).length;
   const totalCount = products.length;
 
   const handleToggleFilter = () => {
-    setShowOnlyAvailable(!showOnlyAvailable);
+    if (showOnlyAvailable) {
+      // Si está activo, desactivarlo (mostrar todos)
+      setShowOnlyAvailable(false);
+    } else {
+      // Si no está activo, activarlo y desactivar el otro filtro
+      setShowOnlyAvailable(true);
+      setShowOnlyUserSelections(false);
+    }
+  };
+
+  const handleToggleUserSelections = () => {
+    if (showOnlyUserSelections) {
+      // Si está activo, desactivarlo (mostrar todos)
+      setShowOnlyUserSelections(false);
+    } else {
+      // Si no está activo, activarlo y desactivar el otro filtro
+      setShowOnlyUserSelections(true);
+      setShowOnlyAvailable(false);
+    }
   };
 
   const handleCloseWelcomeModal = () => {
@@ -97,8 +119,11 @@ export function ProductGrid({
       <AnimatedElement animation="fadeInUp" delay={150}>
         <ProductFilter
           showOnlyAvailable={showOnlyAvailable}
+          showOnlyUserSelections={showOnlyUserSelections}
           onToggleFilter={handleToggleFilter}
+          onToggleUserSelections={handleToggleUserSelections}
           availableCount={availableCount}
+          userSelectionsCount={userSelectionsCount}
           totalCount={totalCount}
         />
       </AnimatedElement>
@@ -124,6 +149,7 @@ export function ProductGrid({
                   isReserved={isReserved}
                   isFullyReserved={isFullyReserved}
                   availableQuantity={availableQuantity}
+                  currentUserEmail={userEmail}
                   onAddToWishlist={onAddToWishlist}
                   onRemoveFromWishlist={onRemoveFromWishlist}
                 />
