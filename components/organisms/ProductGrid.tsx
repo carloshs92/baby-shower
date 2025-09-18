@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { AnimatedElement } from '@/components/atoms/AnimatedElement';
 import { ProductCard } from '@/components/molecules/ProductCard';
 import { ProductFilter } from '@/components/molecules/ProductFilter';
+import { WelcomeModal } from '@/components/molecules/WelcomeModal';
 
 interface Product {
   id: string
@@ -36,6 +37,7 @@ export function ProductGrid({
   onRemoveFromWishlist 
 }: ProductGridProps) {
   const [showOnlyAvailable, setShowOnlyAvailable] = useState(false);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(true);
 
   const getUsersForProduct = (productId: string) => {
     return userSelections.filter((item) => item.product_id === productId)
@@ -73,6 +75,10 @@ export function ProductGrid({
 
   const handleToggleFilter = () => {
     setShowOnlyAvailable(!showOnlyAvailable);
+  };
+
+  const handleCloseWelcomeModal = () => {
+    setShowWelcomeModal(false);
   };
 
   return (
@@ -147,6 +153,12 @@ export function ProductGrid({
           <br/> Los pañales desde la talla P en adelante y la ropita a partir de 3M siempre serán de gran ayuda ☺️💕.
         </p>
       </AnimatedElement>
+
+      {/* Modal de bienvenida */}
+      <WelcomeModal 
+        isOpen={showWelcomeModal} 
+        onClose={handleCloseWelcomeModal} 
+      />
     </>
   )
 }
