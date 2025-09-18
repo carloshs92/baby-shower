@@ -1,4 +1,4 @@
-import { Crown, ExternalLink, UserMinus, UserPlus } from 'lucide-react';
+import { Crown, ExternalLink, Gift, UserMinus } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 
@@ -43,7 +43,7 @@ export function ProductActions({
           }}
           data-product-id={productId}
         >
-          <UserPlus className="h-3 w-3 mr-1" />
+          <Gift className="h-3 w-3 mr-1" />
           Elegir para Emily
         </Button>
       ) : (
