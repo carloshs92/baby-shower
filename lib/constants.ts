@@ -7,13 +7,48 @@ export interface Product {
 }
 
 export const HARDCODED_PRODUCTS: Product[] = [
-{
-  "id": "juguete-didactico-imanix-set-piezas-baby",
-  "title": "Juguete didáctico Imanix set de piezas baby",
-  "link": "https://www.tailoy.com.pe/imanix-set-de-piezas-baby-granja-12-pzs-99306.html",
-  "image_url": "/gifts/juguete-didactico-imanix-set-piezas-baby.jpg",
-  "quantity": 1
-},
+  {
+    id: "granja-amigable",
+    title: "Granja Amigable",
+    link: "https://www.lexuseditores.com.pe/productos/granja-amigable-libro-sonoro/",
+    image_url: "/gifts/granja-amigable.webp",
+    quantity: 1
+  },
+  {
+    id: "cobertor-para-cuna-corral",
+    title: "Cobertor Para Cuna Corral de 70x104cm Beige",
+    link: "https://www.falabella.com.pe/falabella-pe/product/146398890/Cobertor-Para-Cuna-Corral-de-70x104cm-Beige/146398891",
+    image_url: "/gifts/cobertor-para-cuna-corral.webp",
+    quantity: 1
+  },
+  {
+    "id": "colchon-para-coche",
+    "title": "Colchoneta para Coches de Bebé",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/prod18370045/Colchoneta-para-Coches-de-Bebe/20907856",
+    "image_url": "/gifts/colchon-para-coche.webp",
+    "quantity": 1
+  },
+  {
+    "id": "cojin-de-lactancia",
+    "title": "Cojin de Lactancia",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/143235020/COJIN-DE-LACTANCIA-ACOLCHONADITOS-VERDE-CEMENTO-CON-RAYAS-PLOMAS/143235021",
+    "image_url": "/gifts/cojin-de-lactancia.webp",
+    "quantity": 1
+  },
+  {
+    "id": "almohada-bebe-antialergica",
+    "title": "Almohada Bebe Antialérgica",
+    "link": "https://www.falabella.com.pe/falabella-pe/product/prod17600487/Almohada-Bebe-Antialergica/17173231",
+    "image_url": "/gifts/almohada-bebe-antialergica.webp",
+    "quantity": 1
+  },
+  {
+    "id": "juguete-didactico-imanix-set-piezas-baby",
+    "title": "Juguete didáctico Imanix set de piezas baby",
+    "link": "https://www.tailoy.com.pe/imanix-set-de-piezas-baby-granja-12-pzs-99306.html",
+    "image_url": "/gifts/juguete-didactico-imanix-set-piezas-baby.jpg",
+    "quantity": 1
+  },
   {
     "id": "juguetes-multisensorial-5-en-1",
     "title": "Juguetes multisensorial 5 en 1",
@@ -58,13 +93,6 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "quantity": 1
   },
   {
-    "id": "manta-plush-jacquard-beige",
-    "title": "Manta reversible beige- Wawa Pima",
-    "link": "https://wawapima.pe/producto/manta-reversible-plush-jackard-beige/",
-    "image_url": "/gifts/manta-plush-jacquard-beige.webp",
-    "quantity": 1
-  },
-  {
     "id": "conjunto-dos-piezas-jacquard-bebe-wawa-pima",
     "title": "Set de 2 piezas violeta- 0-3M- Wawa Pima",
     "link": "https://wawapima.pe/producto/set-de-2-piezas-lila-chaqueta-y-pantalon-2/",
@@ -90,13 +118,6 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "title": "Juguete giratorio para silla de comer- Infanti",
     "link": "https://simple.ripley.com.pe/juguete-giratorio-para-silla-de-comer-pmp20000974951?s=mdco",
     "image_url": "/gifts/juguete-giratorio-para-silla.jpeg",
-    "quantity": 1
-  },
-  {
-    "id": "limpiador-de-biberones-y-alimentos-700ml-pigeon",
-    "title": "Limpiador de biberones y alimentos 700ml- Pigeon",
-    "link": "https://www.falabella.com.pe/falabella-pe/product/16295259/Limpiador-Liquido-700-ml/16295259",
-    "image_url": "/gifts/limpiador-liquido-700.webp",
     "quantity": 1
   },
   {
@@ -151,13 +172,6 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "quantity": 1
   },
   {
-    "id": "pack-dona-rosa",
-    "title": "Almohada de Lactancia gris arena o palo rosa- Kaligo",
-    "link": "https://www.kaligoperu.com/product-page/pack-dona",
-    "image_url": "/gifts/pack-dona-rosa.avif",
-    "quantity": 1
-  },
-  {
     "id": "fular-verde-para-bebe",
     "title": "Fular",
     "link": "https://www.falabella.com.pe/falabella-pe/product/123221892/Fular-Verde-para-Bebe/123221893",
@@ -207,13 +221,6 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "quantity": 1
   },
   {
-    "id": "movil-para-bebe-tiny-love",
-    "title": "Móvil para bebé princess- Tini love",
-    "link": "https://www.tailoy.com.pe/130550-movil-take-along-tiny-princess-tales-79328.html",
-    "image_url": "/gifts/movil-para-bebe-tiny-love.jpg",
-    "quantity": 1
-  },
-  {
     "id": "medias-de-estimulacion-con-sonajero",
     "title": "Medias De Estimulación Con Sonajero Buho Zorro",
     "link": "https://www.falabella.com.pe/falabella-pe/product/18265254/Medias-De-Estimulacion-Con-Sonajero-Buho-Zorro/18265254",
@@ -232,13 +239,6 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "title": "Pijama Bebé- 3 a 6 meses- Carters",
     "link": "https://www.falabella.com.pe/falabella-pe/product/21088703/Pijama-Bebe-Unisex/21088707",
     "image_url": "/gifts/pijama-bebe-unisex-carters.webp",
-    "quantity": 1
-  },
-  {
-    "id": "manta-pack-4-bebe-carters",
-    "title": "Manta Pack X4 Bebé Niña Carters",
-    "link": "https://www.falabella.com.pe/falabella-pe/product/20994149/Manta-Pack-X4-Bebe-Nina-Carters/20994150",
-    "image_url": "/gifts/manta-pack-4-bebe-carters.webp",
     "quantity": 1
   },
   {
