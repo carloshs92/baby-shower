@@ -75,7 +75,7 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "title": "Juguetes multisensorial 5 en 1",
     "link": "https://www.falabella.com.pe/falabella-pe/product/144663599/Juguetes-multisensorial-5-en-1/144663600",
     "image_url": "/gifts/juguetes-multisensorial-5-en-1.webp",
-    "quantity": 2
+    "quantity": 1
   },
 
   {
