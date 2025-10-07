@@ -8,6 +8,34 @@ export interface Product {
 
 export const HARDCODED_PRODUCTS: Product[] = [
   {
+    id: "colchoneta-para-coche-hearts-rosado",
+    title: "Colchoneta para Coche Hearts Rosado",
+    link: "https://www.falabella.com.pe/falabella-pe/product/142303007/COLCHONETA-PARA-COCHE-HEARTS-ROSADO/142303008",
+    image_url: "/gifts/colchoneta-para-coche-hearts-rosado.webp",
+    quantity: 1
+  },
+  {
+    id: "colchoneta-inflable-de-agua-para-bebes",
+    title: "Colchoneta inflable de agua para bebés",
+    link: "https://www.falabella.com.pe/falabella-pe/product/121629904/Colchoneta-inflable-de-agua-para-bebes-y-ninos-pequenos-centro-de-actividades-de-ocio-perfecto-para-el-crecimiento-de-la-estimulacion-de-tu-bebe/121629908",
+    image_url: "/gifts/colchoneta-inflable-de-agua-para-bebes.webp",
+    quantity: 1
+  },
+  {
+    id: "animales-del-mar-x-8-para-bano",
+    title: "Animales Del Mar X 8 Para Baño",
+    link: "https://infanti.com.pe/products/21355-animales-del-mar-x-8-para-bano",
+    image_url: "/gifts/animales-del-mar-x-8-para-bano.webp",
+    quantity: 1
+  },
+  {
+    id: "movil-giratorio-musical-rosado-con-proyector-para-bebe",
+    title: "Móvil Giratorio Musical Rosado con Proyector para Bebé",
+    link: "https://www.falabella.com.pe/falabella-pe/product/140326760/Movil-Giratorio-Musical-Rosado-con-Proyector-para-Bebe/140326761",
+    image_url: "/gifts/movil-giratorio-musical-rosado-con-proyector-para-bebe.webp",
+    quantity: 1
+  },
+  {
     id: "granja-amigable",
     title: "Granja Amigable",
     link: "https://www.lexuseditores.com.pe/productos/granja-amigable-libro-sonoro/",
@@ -20,13 +48,6 @@ export const HARDCODED_PRODUCTS: Product[] = [
     link: "https://www.falabella.com.pe/falabella-pe/product/146398890/Cobertor-Para-Cuna-Corral-de-70x104cm-Beige/146398891",
     image_url: "/gifts/cobertor-para-cuna-corral.webp",
     quantity: 1
-  },
-  {
-    "id": "colchon-para-coche",
-    "title": "Colchoneta para Coches de Bebé",
-    "link": "https://www.falabella.com.pe/falabella-pe/product/prod18370045/Colchoneta-para-Coches-de-Bebe/20907856",
-    "image_url": "/gifts/colchon-para-coche.webp",
-    "quantity": 1
   },
   {
     "id": "cojin-de-lactancia",
