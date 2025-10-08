@@ -8,6 +8,48 @@ export interface Product {
 
 export const HARDCODED_PRODUCTS: Product[] = [
   {
+    id: "pack-bebe-juguete-sonajero-azul",
+    title: "Pack Bebé Juguete Sonajero Azul",
+    link: "https://www.falabella.com.pe/falabella-pe/product/146326640/Pack-Bebe-Juguete-Sonajero-Azul-+-Mordedor-Banana-Amarillo/146326641",
+    image_url: "/gifts/pack-bebe-juguete-sonajero-azul.webp",
+    quantity: 1
+  },
+  {
+    id: "peluche-cocodrilo-sensorial-con-sonajero-y-texturas-de-bebe",
+    title: "Peluche Cocodrilo Sensorial con Sonajero",
+    link: "https://www.falabella.com.pe/falabella-pe/product/141648522/Peluche-Cocodrilo-Sensorial-con-Sonajero-y-Texturas-de-Bebe/141648523",
+    image_url: "/gifts/peluche-cocodrilo-sensorial-con-sonajero-y-texturas-de-bebe.webp",
+    quantity: 1,
+  },
+  {
+    id: "alfombra-antigolpes-reversible-plegable",
+    title: "Alfombra Antigolpes Reversible Plegable",
+    link: "https://www.falabella.com.pe/falabella-pe/product/144054126/Alfombra-Antigolpes-Reversible-Plegable-180x200-Paseo/144054127",
+    image_url: "/gifts/alfombra-antigolpes-reversible-plegable.webp",
+    quantity: 1
+  },
+  {
+    id: "canguro-bebe-ergonomico-15-posicions-con-panalera-celeste",
+    title: "Canguro Bebe Ergonomico 15 Posiciones con Panalera Celeste",
+    link: "https://www.falabella.com.pe/falabella-pe/product/117186435/CANGURO-BEBE-ERGONOMICO-15-POSICIONES-CON-PANALERA-CELESTE/117186436",
+    image_url: "/gifts/canguro-bebe-ergonomico-15-posicions-con-panalera-celeste.webp",
+    quantity: 1
+  },
+  {
+    id: "protector-anti-caida-mariposa-rosa-para-bebe",
+    title: "Protector anti caida mariposa rosa para bebe",
+    link: 'https://www.falabella.com.pe/falabella-pe/product/138006717/Protector-anti-caida-mariposa-rosa-para-bebe/138006720',
+    image_url: "/gifts/protector-anti-caida-mariposa-rosa-para-bebe.webp",
+    quantity: 1
+  },
+  {
+    id: "juguete-montessori-con-12-lados-de-actividades",
+    title: "Juguete Montessori con 12 Lados de Actividades",
+    link: "https://www.falabella.com.pe/falabella-pe/product/135518380/Juguete-Montessori-con-12-Lados-de-Actividades-Sensoriales/135518381",
+    image_url: "/gifts/juguete-montessori-con-12-lados-de-actividades.webp",
+    quantity: 1
+  },
+  {
     id: "colchoneta-para-coche-hearts-rosado",
     title: "Colchoneta para Coche Hearts Rosado",
     link: "https://www.falabella.com.pe/falabella-pe/product/142303007/COLCHONETA-PARA-COCHE-HEARTS-ROSADO/142303008",
@@ -225,13 +267,6 @@ export const HARDCODED_PRODUCTS: Product[] = [
     "title": "Gimnasio Didáctico vaca- Carestino",
     "link": "https://www.falabella.com.pe/falabella-pe/product/140788650/Gimnasio-Didactico-Carestino-Vaca/140788651",
     "image_url": "/gifts/gimnasio-didactico-carestino.webp",
-    "quantity": 1
-  },
-  {
-    "id": "alfombra-antigolpes",
-    "title": "Alfombra Antigolpes Reversible Plegable 180x200- Carestino",
-    "link": "https://www.carestino.com.pe/producto/alfombra-antigolpes-reversible-plegable-180x200-paseo/",
-    "image_url": "/gifts/alfombra-antigolpes.webp",
     "quantity": 1
   },
   {
